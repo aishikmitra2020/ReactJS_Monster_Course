@@ -32,19 +32,19 @@ const EventHandling = () => {
     {/* When we are passing just the function ref, we needn't to invoke/call the function right there, as it will call the function immediately even the event doesn't occurred */}
 
     {/* It by default pases, the synthetic event object as an argument to the named function */}
-        <button onClick={handleButtonClick}>click me!</button>
+        <button onClick={handleButtonClick} className='p-5 bg-green-500 m-2'>click me!</button>
 
         {/* But while we have to call the fuunction inside an arrow function, then only it will be called when the event occurs. */}
-        <button onClick={(e) => handleButtonClick(e)}>click me2!</button>
+        <button onClick={(e) => handleButtonClick(e)} className='p-5 bg-green-500 m-2'>click me2!</button>
 
         {/* Inline Event Handlers */}
-        <button onClick={(event) => console.log(event)}>click me4!</button>
+        <button onClick={(event) => console.log(event)} className='p-5 bg-green-500 m-2'>click me4!</button>
 
         {/* Function Components with Inline Arrow Functions */}
-        <button onClick={() => alert('Button5 Clicked')}>click me5!</button>
+        <button onClick={() => alert('Button5 Clicked')} className='p-5 bg-green-500 m-2'>click me5!</button>
 
         {/* Passing Arguments to Event Handlers */}
-        <button onClick={() => handleWelcome("Aishik")}>click me5!</button>
+        <button onClick={() => handleWelcome("Aishik")} className='p-5 bg-green-500 m-2'>click me5!</button>
     </>
 }
 

@@ -49,3 +49,41 @@ Example: `onClick`, `onMouseEnter`.
 *   **Descriptive Names:** Function names should be **descriptive and reflect what the function does**. Avoid vague names like `clickHandler` or `handleFormSubmit`. Be specific about the action being performed.
 
     * Example: Use `handleFormSubmit` instead of just `handleSubmit` if it's specifically for form submission.
+
+
+# Passing Event Handlers as Props in React.js
+Passing event handlers as props in React.js is a common pattern used to allow ***child components to communicate with parent components.*** This pattern is useful in various scenarios, including:
+
+1. **Form Handling**
+    *   Passing event handlers like onChange or onSubmit to form components allows child components to update form data and notify the parent component of changes.
+
+2. **User Interaction**
+    *   Event handlers like onClick can be passed to interactive elements (e.g., buttons, links) to trigger specific actions in the parent component, such as opening a modal or navigating to a different page.
+
+3. **State Management**
+    * Event handlers can be used to update state in the parent component, which can then be passed down to child components as props to reflect the updated status.
+
+4. **Callback Functions**
+    *   Event handlers can serve as callback functions to handle asynchronous operations or update state based on the result of an operation.
+
+
+# Event Propagation
+
+Event propagation refers to the process of how events propagate or travel through the DOM (Document Object Model) hierarchy.
+
+In JavaScript, there are 3 phases of event propagation:
+
+1. **Capturing phase:** The event starts from the root of the DOM and goes down to the target element.
+
+2. **Target phase:** The event reaches the target element where it occurs.
+
+3. **Bubbling phase:** The event starts from the target element and bubbles up to the root of the DOM. (opposite to Capturing phase)
+
+
+# Event Propagation in React.js
+
+*   In React.js, event propagation refers to the process by which events propagate or "bubble" up from the target element through its parent elements in the DOM hierarchy. React follows the same event propagation model as regular JavaScript DOM events.
+
+*   When an event occurs on an element in a React component, such as a button click, the event is first captured at the target element and then bubbles up through the parent elements, triggering any event handlers that have been defined along the way. This allows you to handle events at different levels of the component hierarchy.
+
+*   React provides a way to stop event propagation using the `stopPropagation()` method which can be called on the event object within an event handler. This prevents the event from bubbling up further in the DOM, ensuring that only the intended event handler is triggered.
